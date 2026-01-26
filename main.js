@@ -2,6 +2,61 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lucide Icons
     lucide.createIcons();
 
+    // --- Custom Cursor ---
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    const activeElements = document.querySelectorAll('a, button, .faq-toggle');
+    activeElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+    });
+
+    // --- Text Splitting for Hero Title ---
+    const heroTitle = document.querySelector('h1.reveal-scale');
+    if (heroTitle) {
+        const text = heroTitle.textContent.trim();
+        heroTitle.textContent = '';
+        [...text].forEach((char, i) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.className = 'char';
+            span.style.transitionDelay = `${i * 100}ms`;
+            heroTitle.appendChild(span);
+        });
+    }
+
+    // --- Magnetic Effect ---
+    const magneticElements = document.querySelectorAll('.px-10.py-4, #mobile-menu-toggle');
+    magneticElements.forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = `translate(0px, 0px)`;
+        });
+    });
+
+    // --- Mouse Parallax for Hero ---
+    const heroSection = document.querySelector('section');
+    const heroBg = document.querySelector('section img');
+    if (heroSection && heroBg) {
+        heroSection.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            heroBg.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
+        });
+    }
+
     // --- Loader ---
     const loader = document.getElementById('loader');
     const content = document.getElementById('content');
@@ -98,8 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optional: stop observing once animated
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -116,5 +169,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.classList.add('active');
             }
         });
+    });
+
+    // --- Portfolio Modal ---
+    const portfolioModal = document.getElementById('portfolio-modal');
+    const portfolioModalImage = document.getElementById('portfolio-modal-image');
+    const portfolioModalClose = document.getElementById('portfolio-modal-close');
+    const portfolioModalBtns = document.querySelectorAll('.portfolio-modal-btn');
+
+    const openPortfolioModal = (imageSrc) => {
+        portfolioModalImage.src = imageSrc;
+        portfolioModal.classList.remove('hidden');
+        portfolioModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+    };
+
+    const closePortfolioModal = () => {
+        portfolioModal.classList.add('hidden');
+        portfolioModal.classList.remove('flex');
+        document.body.style.overflow = '';
+    };
+
+    portfolioModalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const imageSrc = btn.getAttribute('data-portfolio-modal');
+            openPortfolioModal(imageSrc);
+        });
+    });
+
+    portfolioModalClose.addEventListener('click', closePortfolioModal);
+
+    portfolioModal.addEventListener('click', (e) => {
+        if (e.target === portfolioModal) {
+            closePortfolioModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !portfolioModal.classList.contains('hidden')) {
+            closePortfolioModal();
+        }
     });
 });

@@ -33,10 +33,17 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
+    <!-- GSAP & Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-black text-white font-sans selection:bg-white selection:text-black overflow-x-hidden">
+    <!-- Noise Overlay -->
+    <div class="fixed inset-0 pointer-events-none z-[9999] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
     
     <!-- Loader -->
     <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-black text-white transition-opacity duration-500 ease-in-out">
@@ -93,7 +100,7 @@
                 <!-- Background Elements -->
                 <div class="absolute inset-0 z-0 bg-black">
                     <img 
-                        src="./img/haikei2.webp" 
+                        src="./img/haikei.webp" 
                         alt="Abstract Background" 
                         class="w-full h-full object-cover scale-105"
                     />
@@ -110,13 +117,12 @@
 
                         <div class="reveal-up delay-300 max-w-3xl mx-auto">
                             <h2 class="text-2xl md:text-4xl font-bold mb-6 text-white leading-tight">
-                                シンプルなデザインで<br class="md:hidden" />
-                                <span class="bg-white text-black px-3 py-1 inline-block transform -skew-x-6 mx-2 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)]">最速</span>
-                                でカタチに。
+                                <span class="bg-white text-black px-3 py-1 inline-block transform -skew-x-6 mx-2 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)]">WebとAIで</span><br class="md:hidden" />
+                                ビジネスの成長を加速させる。
                             </h2>
                             <p class="text-zinc-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto font-light">
-                                とりあえずLPやHPが欲しい方に向けて<br class="hidden md:block" />
-                                最小限のコストで最大限の価値を届けるWeb制作サービス。
+                                HP制作からSNS運用、AIによる業務効率化まで。<br class="hidden md:block" />
+                                あなたの事業の「デジタル担当」を引き受けます。
                             </p>
 
                             <div class="flex flex-col sm:flex-row gap-5 justify-center">
@@ -187,7 +193,7 @@
                             <div class="reveal-up mb-12">
                                 <h3 class="text-2xl md:text-3xl font-bold leading-tight mb-8 text-zinc-200">
                                     最小限のコストとシンプルなデザインで、<br />
-                                    <span class="text-zinc-500">LPやHPを必要とする方に最大限の価値を提供します</span>
+                                    <span class="text-zinc-500">新規のLP・HP、既存LP・HPの改修、SNSコンテンツ作成、AI活用支援を必要とする方に最大限の価値を提供します</span>
                                 </h3>
                                 <div class="space-y-6 text-gray-400 leading-relaxed font-light text-lg">
                                     <p>
@@ -198,7 +204,7 @@
                                         最近は、WordPressを用いたサイト制作・移行、バナー制作、既存サイトの改修などを担当し、ドメイン取得からサーバー設定、デザイン・コーディングまで一貫して対応しています。
                                     </p>
                                     <p>
-                                        最新のAI技術を取り入れ、それをWeb制作に活かすことが私の最大の強みです。
+                                        最新のAI技術を取り入れ、それをWeb制作・SNSのコンテンツ作成に活かすことが私の最大の強みです。
                                     </p>
                                 </div>
                             </div>
@@ -278,7 +284,7 @@
                             <div class="relative aspect-video overflow-hidden">
                                 <img 
                                     src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop" 
-                                    alt="LP・HP制作" 
+                                    alt="LP・HPの制作から改修まで" 
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div class="absolute bottom-0 left-0 bg-black/80 text-white text-xl font-bold px-4 py-2 border-r border-t border-zinc-800">
@@ -286,17 +292,17 @@
                                 </div>
                             </div>
                             <div class="p-8">
-                                <h3 class="text-2xl font-bold mb-4 text-white">LP・HP制作</h3>
+                                <h3 class="text-2xl font-bold mb-4 text-white">LP・HPの制作から改修まで</h3>
                                 <p class="text-gray-400 text-base leading-relaxed">
-                                    「新サービスのリリースに間に合わせたい」「一日も早く集客を開始したい」というご要望にお応えし、WordPressを活用したLPやHPを迅速に制作いたします。 サーバーの契約やドメイン取得といった初期設定も、ご要望に合わせて一括で代行・サポート可能です。 また、最新のAI技術を駆使し、クリック率を意識したバナー、SNS用画像、YouTubeサムネイルの制作にも対応可能です。
+                                    「新サービスのリリースに間に合わせたい」「一日も早く集客を開始したい」というご要望にお応えし、WordPressを活用したLP・HPを迅速に制作いたします。既存のLP・HPを最新のWeb基準へと最適化する改修にも対応し、レスポンシブ化、SEO改善など、ユーザー体験を向上させる改修を行います。サーバーの契約やドメイン取得、設定変更といった初期設定も、ご要望に合わせて一括で代行・サポート可能です。
                                 </p>
                             </div>
                         </div>
                         <div class="reveal-up delay-100 bg-zinc-900/50 border border-zinc-800 rounded-sm hover:border-zinc-600 transition-colors group overflow-hidden">
                             <div class="relative aspect-video overflow-hidden">
                                 <img 
-                                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" 
-                                    alt="既存LP・HPの改修" 
+                                    src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2070&auto=format&fit=crop" 
+                                    alt="SNSのコンテンツ作成" 
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div class="absolute bottom-0 left-0 bg-black/80 text-white text-xl font-bold px-4 py-2 border-r border-t border-zinc-800">
@@ -304,9 +310,9 @@
                                 </div>
                             </div>
                             <div class="p-8">
-                                <h3 class="text-2xl font-bold mb-4 text-white">既存LP・HPの改修およびWordpress化</h3>
+                                <h3 class="text-2xl font-bold mb-4 text-white">SNSのコンテンツ作成</h3>
                                 <p class="text-gray-400 text-base leading-relaxed">
-                                    既存のLPやHPを、WordPressを活用して最新のWeb基準へと最適化します。単なるシステムの移行にとどまらず、読み込みスピードの改善、レスポンシブ化、SEO改善など、ユーザー体験を向上させる改修を行います。 面倒なサーバー・ドメインの設定変更も一括でサポート致します。※料金は要相談になります。
+                                    「SNSで集客を増やしたい」「フォロワーを増やしたい」というご要望にお応えし、SNSのコンテンツ作成を行います。クリック率を意識したバナー、SNS用画像、YouTubeサムネイルの制作にも対応可能です。各プラットフォームに最適化されたコンテンツ制作により、効果的なSNS運用をサポートいたします。
                                 </p>
                             </div>
                         </div>
@@ -324,7 +330,7 @@
                             <div class="p-8">
                                 <h3 class="text-2xl font-bold mb-4 text-white">AI活用支援</h3>
                                 <p class="text-gray-400 text-base leading-relaxed">
-                                    最新生成AIを導入し、日々の業務フローを根本から効率化するサポートを行います。単にツールを紹介するだけでなく、お客様の業務内容に合わせた「専用のプロンプト作成」や「コンテンツ作成の自動化フロー」を構築します。 記事の構成案作成、メール対応の迅速化、リサーチ業務の短縮など、単純作業をAIに任せることで、人間が本来注力すべき戦略的な業務に集中できる環境を整えます。「AIをどう使えばいいかわからない」という段階から、現場で活用できるレベルまでサポートいたします。
+                                    最新生成AIを導入し、日々の業務フローを根本から効率化するサポートを行います。単にツールを紹介するだけでなく、お客様の業務内容に合わせた「専用のプロンプト作成」を構築します。 単純作業をAIに任せることで、人間が本来注力すべき戦略的な業務に集中できる環境を整えます。「AIをどう使えばいいかわからない」という段階から、現場で活用できるレベルまでサポートいたします。
                                 </p>
                             </div>
                         </div>
@@ -424,6 +430,69 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="reveal-scale delay-300 group relative bg-zinc-900 rounded-sm overflow-hidden">
+                            <div class="relative aspect-[4/3] overflow-hidden">
+                                <img 
+                                    src="img/portfolio4.webp" 
+                                    alt="Portfolio 4" 
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button data-portfolio-modal="img/portfolio4.webp" class="portfolio-modal-btn flex items-center gap-2 text-white font-bold border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors">
+                                        詳細を見る <i data-lucide="external-link" size="16"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white">占いの館 サムネ</h3>
+                                    <span class="text-xs font-mono text-zinc-500 uppercase border border-zinc-800 px-2 py-1 rounded">SNS用画像</span>
+                                </div>
+                                <p class="text-sm text-gray-400 mb-4">新規来店・予約獲得を目的に、20〜40代の女性をターゲットとしたYouTubeサムネイルを制作。恋愛・仕事・人生相談に悩む方々に響くよう、「安心感・信頼感・当たる雰囲気・親しみやすさ」をデザインに反映し、クリック率の向上を実現しました。</p>
+                            </div>
+                        </div>
+                        <div class="reveal-scale delay-400 group relative bg-zinc-900 rounded-sm overflow-hidden">
+                            <div class="relative aspect-[4/3] overflow-hidden">
+                                <img 
+                                    src="img/portfolio5.webp" 
+                                    alt="Portfolio 5" 
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button data-portfolio-modal="img/portfolio5.webp" class="portfolio-modal-btn flex items-center gap-2 text-white font-bold border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors">
+                                        詳細を見る <i data-lucide="external-link" size="16"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white">占いの館 SNS用画像</h3>
+                                    <span class="text-xs font-mono text-zinc-500 uppercase border border-zinc-800 px-2 py-1 rounded">SNS用画像</span>
+                                </div>
+                                <p class="text-sm text-gray-400 mb-4">新規来店・予約獲得を目的に、20〜40代の女性をターゲットとしたInstagram投稿用画像を制作。恋愛・仕事・人生相談に悩む方々に響くよう、「安心感・信頼感・当たる雰囲気・親しみやすさ」をデザインに反映し、エンゲージメント率の向上を実現しました。</p>
+                            </div>
+                        </div>
+                        <div class="reveal-scale delay-500 group relative bg-zinc-900 rounded-sm overflow-hidden">
+                            <div class="relative aspect-[4/3] overflow-hidden">
+                                <img 
+                                    src="img/portfolio6.webp" 
+                                    alt="Portfolio 6" 
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button data-portfolio-modal="img/portfolio6.webp" class="portfolio-modal-btn flex items-center gap-2 text-white font-bold border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors">
+                                        詳細を見る <i data-lucide="external-link" size="16"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white">ネイルサロン サムネ</h3>
+                                    <span class="text-xs font-mono text-zinc-500 uppercase border border-zinc-800 px-2 py-1 rounded">SNS用画像</span>
+                                </div>
+                                <p class="text-sm text-gray-400 mb-4">新規来店・予約獲得を目的に、20代〜40代の女性をターゲットとしたInstagram投稿デザインを制作。「自分へのご褒美」「指先を綺麗にしてモチベーションを上げたい」「ネイルデザインのマンネリ解消」「爪の悩み解決」といった心理に響くデザインを心がけ、エンゲージメント率の向上を実現しました。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -468,10 +537,9 @@
                                     <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-transparent border border-zinc-700 text-white hover:bg-zinc-800 transition-all text-center">無料相談する</a>
                                 </div>
                             </div>
-                            <!-- Basic Plan (Recommended) -->
-                            <div class="reveal-up delay-100 flex flex-col bg-zinc-900 border border-zinc-600 xl:-mt-4 xl:-mb-4 z-10 shadow-2xl shadow-zinc-900/50 rounded-sm overflow-hidden">
-                                <div class="absolute top-0 w-full bg-white text-black py-1 text-center text-xs font-bold uppercase tracking-widest z-20">Recommended</div>
-                                <div class="p-8 pt-10">
+                            <!-- Basic Plan -->
+                            <div class="reveal-up delay-100 flex flex-col bg-black border border-zinc-800 hover:border-zinc-700 rounded-sm overflow-hidden">
+                                <div class="p-8">
                                     <h3 class="text-lg font-bold text-gray-300 mb-6">ライトプラン</h3>
                                     <div class="mb-8">
                                         <div class="flex items-center gap-2 mb-1">
@@ -491,12 +559,13 @@
                                     </ul>
                                 </div>
                                 <div class="mt-auto p-8 pt-0">
-                                    <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-white text-black hover:bg-gray-200 transition-all text-center">無料相談する</a>
+                                    <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-transparent border border-zinc-700 text-white hover:bg-zinc-800 transition-all text-center">無料相談する</a>
                                 </div>
                             </div>
-                            <!-- Standard Plan -->
-                            <div class="reveal-up delay-200 flex flex-col bg-black border border-zinc-800 hover:border-zinc-700 rounded-sm overflow-hidden">
-                                <div class="p-8">
+                            <!-- Standard Plan (Recommended) -->
+                            <div class="reveal-up delay-200 flex flex-col bg-zinc-900 border border-zinc-600 xl:-mt-4 xl:-mb-4 z-10 shadow-2xl shadow-zinc-900/50 rounded-sm overflow-hidden relative">
+                                <div class="absolute top-0 w-full bg-white text-black py-1 text-center text-xs font-bold uppercase tracking-widest z-20">Recommended</div>
+                                <div class="p-8 pt-10">
                                     <h3 class="text-lg font-bold text-gray-300 mb-6">スタンダードプラン</h3>
                                     <div class="mb-8">
                                         <div class="flex items-center gap-2 mb-1">
@@ -520,7 +589,7 @@
                                     </ul>
                                 </div>
                                 <div class="mt-auto p-8 pt-0">
-                                    <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-transparent border border-zinc-700 text-white hover:bg-zinc-800 transition-all text-center">無料相談する</a>
+                                    <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-white text-black hover:bg-gray-200 transition-all text-center">無料相談する</a>
                                 </div>
                             </div>
                             <!-- Premium Plan -->
@@ -545,10 +614,6 @@
                                         <li class="flex items-start text-sm text-gray-300">
                                             <i data-lucide="check" class="w-5 h-5 mr-3 text-white shrink-0"></i>
                                             <span class="leading-5">予約管理、会員機能などのシステム実装</span>
-                                        </li>
-                                        <li class="flex items-start text-sm text-gray-300">
-                                            <i data-lucide="check" class="w-5 h-5 mr-3 text-white shrink-0"></i>
-                                            <span class="leading-5">ロゴ制作、写真撮影、動画制作、SNS運用のディレクション</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -604,10 +669,9 @@
                                     <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-transparent border border-zinc-700 text-white hover:bg-zinc-800 transition-all text-center">無料相談する</a>
                                 </div>
                             </div>
-                            <!-- Simple (Recommended) -->
-                            <div class="reveal-up delay-100 flex flex-col bg-zinc-900 border border-zinc-600 md:-mt-4 md:-mb-4 z-10 shadow-2xl shadow-zinc-900/50 rounded-sm overflow-hidden">
-                                <div class="absolute top-0 w-full bg-white text-black py-1 text-center text-xs font-bold uppercase tracking-widest z-20">Recommended</div>
-                                <div class="p-8 pt-10">
+                            <!-- Simple -->
+                            <div class="reveal-up delay-100 flex flex-col bg-black border border-zinc-800 hover:border-zinc-700 rounded-sm overflow-hidden">
+                                <div class="p-8">
                                     <h3 class="text-lg font-bold text-gray-300 mb-6">スタンダードプラン</h3>
                                     <div class="mb-8">
                                         <div class="flex items-center gap-2 mb-1">
@@ -629,28 +693,25 @@
                                         </li>
                                         <li class="flex items-start text-sm text-gray-300">
                                             <i data-lucide="check" class="w-5 h-5 mr-3 text-white shrink-0"></i>
-                                            <span class="leading-5">Google Analytics / サーチコンソールの管理運用</span>
-                                        </li>
-                                        <li class="flex items-start text-sm text-gray-300">
-                                            <i data-lucide="check" class="w-5 h-5 mr-3 text-white shrink-0"></i>
                                             <span class="leading-5">SEO改善</span>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="mt-auto p-8 pt-0">
-                                    <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-white text-black hover:bg-gray-200 transition-all text-center">無料相談する</a>
+                                    <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-transparent border border-zinc-700 text-white hover:bg-zinc-800 transition-all text-center">無料相談する</a>
                                 </div>
                             </div>
-                            <!-- Standard -->
-                            <div class="reveal-up delay-200 flex flex-col bg-black border border-zinc-800 hover:border-zinc-700 rounded-sm overflow-hidden">
-                                <div class="p-8">
+                            <!-- Standard (Recommended) -->
+                            <div class="reveal-up delay-200 flex flex-col bg-zinc-900 border border-zinc-600 md:-mt-4 md:-mb-4 z-10 shadow-2xl shadow-zinc-900/50 rounded-sm overflow-hidden relative">
+                                <div class="absolute top-0 w-full bg-white text-black py-1 text-center text-xs font-bold uppercase tracking-widest z-20">Recommended</div>
+                                <div class="p-8 pt-10">
                                     <h3 class="text-lg font-bold text-gray-300 mb-6">プレミアムプラン</h3>
                                     <div class="mb-8">
                                         <div class="flex items-center gap-2 mb-1">
                                             <span class="text-xs text-zinc-500 uppercase tracking-wider font-bold">月額費用 (税込)</span>
                                         </div>
                                         <div class="flex items-baseline gap-1">
-                                            <div class="text-3xl xl:text-2xl 2xl:text-3xl font-black text-white tracking-tight whitespace-nowrap">¥33,000~¥110,000</div>
+                                            <div class="text-3xl xl:text-2xl 2xl:text-3xl font-black text-white tracking-tight whitespace-nowrap">¥33,000~</div>
                                             <span class="text-sm text-zinc-500 font-bold">/月</span>
                                         </div>
                                     </div>
@@ -667,10 +728,14 @@
                                             <i data-lucide="check" class="w-5 h-5 mr-3 text-white shrink-0"></i>
                                             <span class="leading-5">キャンペーンに合わせた特設ページやバナーの随時作成</span>
                                         </li>
+                                        <li class="flex items-start text-sm bg-zinc-800/50 rounded-sm p-2 -mx-1">
+                                            <i data-lucide="check" class="w-5 h-5 mr-3 text-white shrink-0"></i>
+                                            <span class="leading-5 text-white font-semibold">SNSのコンテンツ作成(SNS用画像、YouTubeサムネイルの制作...etc)</span>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="mt-auto p-8 pt-0">
-                                    <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-transparent border border-zinc-700 text-white hover:bg-zinc-800 transition-all text-center">無料相談する</a>
+                                    <a href="https://lin.ee/urNVx5U" target="_blank" class="block w-full py-3 px-4 rounded-sm font-bold text-sm bg-white text-black hover:bg-gray-200 transition-all text-center">無料相談する</a>
                                 </div>
                             </div>
                         </div>
@@ -702,7 +767,7 @@
                             </button>
                             <div class="faq-content h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
                                 <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-zinc-900 pt-4">
-                                    最新の生成AIを開発工程に全面的に導入しているためです。AIの活用により、コーディングや動作テスト、デザインの土台作りといった工数を大幅に短縮し、開発効率を極限まで高めました。テクノロジーの力で制作の効率化を実現し、その分をお客様の制作費用に還元しています。
+                                    最新の生成AIを開発工程に全面的に導入しているためです。AIの活用により、コーディングや動作テスト、デザインの土台作りといった工数を大幅に短縮し、開発効率を極限まで高めました。AIの力で制作の効率化を実現し、その分をお客様の制作費用に還元しています。
                                 </div>
                             </div>
                         </div>
@@ -734,8 +799,8 @@
                             </button>
                             <div class="faq-content h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
                                 <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-zinc-900 pt-4">
-                                    制作後に関しては、軽微な修正であれば、保守運用のライトプランで月2回、セクション単位での修正であれば、保守運用のスタンダードプランで月2回までとさせていただいております。
-                                    制作中のデザインにこだわりたい場合は、スタンダードプラン以上をご検討ください。
+                                    制作後に関しては、保守運用のライトプラン以上で月2回までとさせていただいております。
+                                    制作のデザインにこだわりたい場合は、初期制作費のプレミアムプランをご検討ください。
                                 </div>
                             </div>
                         </div>
@@ -771,10 +836,54 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="reveal-up delay-250 border border-zinc-800 rounded-sm bg-zinc-950 overflow-hidden faq-item">
+                            <button class="w-full flex items-center justify-between p-6 text-left hover:bg-zinc-900 transition-colors focus:outline-none faq-toggle">
+                                <div>
+                                    <span class="text-xs text-gray-500 mb-1 block">機能追加について</span>
+                                    <span class="font-bold text-white pr-8">機能を追加したい場合どうすれば良いですか？</span>
+                                </div>
+                                <div class="shrink-0 text-gray-400">
+                                    <i data-lucide="plus" class="faq-icon" size="20"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-zinc-900 pt-4">
+                                    機能追加の費用は、追加する機能の種類や複雑さによって異なります。まずは無料相談にて、ご希望の機能についてお気軽にご相談ください。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal-up delay-300 border border-zinc-800 rounded-sm bg-zinc-950 overflow-hidden faq-item">
+                            <button class="w-full flex items-center justify-between p-6 text-left hover:bg-zinc-900 transition-colors focus:outline-none faq-toggle">
+                                <div>
+                                    <span class="text-xs text-gray-500 mb-1 block">AI活用支援について</span>
+                                    <span class="font-bold text-white pr-8">AI活用支援はどのようなことをやりますか？</span>
+                                </div>
+                                <div class="shrink-0 text-gray-400">
+                                    <i data-lucide="plus" class="faq-icon" size="20"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-zinc-900 pt-4">
+                                    AI活用支援では、お客様の業務内容に合わせた実践的なサポートを提供いたします。具体的には、SNS用の画像生成、文章の校正・改善、メールの自動送信設定、効率的なリサーチ方法の構築など、日々の業務を効率化するためのAI活用方法をご提案・実装いたします。単にツールを紹介するだけでなく、お客様の業務フローに最適化した「専用のプロンプト作成」や「自動化フロー」を構築することで、単純作業をAIに任せ、人間が本来注力すべき戦略的な業務に集中できる環境を整えます。
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
+
+        <!-- Portfolio Modal -->
+        <div id="portfolio-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/95 backdrop-blur-sm">
+            <div class="relative w-full h-full flex items-center justify-center p-4">
+                <button id="portfolio-modal-close" class="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors p-2">
+                    <i data-lucide="x" size="32"></i>
+                </button>
+                <div class="max-w-7xl w-full h-full flex items-center justify-center">
+                    <img id="portfolio-modal-image" src="" alt="Portfolio Image" class="max-w-full max-h-full object-contain">
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer class="bg-black text-white pt-20 pb-8 border-t border-zinc-900">
