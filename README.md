@@ -1,9 +1,9 @@
-# Sinsoku
+# S.Work
 
-シンプルなデザインで早く安くお届けするWeb制作サービス「Sinsoku」のポートフォリオサイトです。
+シンプルなデザインで早く安くお届けするWeb制作サービス「S.Work」のポートフォリオサイトです。
 
 ## 公開URL
-[https://sko6455008.github.io/Sinsoku/](https://sko6455008.github.io/Sinsoku/)
+[https://sko6455008.github.io/S.Work/](https://sko6455008.github.io/S.Work/)
 
 ## プロジェクト概要
 最小限のコストで最大限の価値を届けるWeb制作をコンセプトに、最新の生成AIを活用した効率的な開発を行っています。
